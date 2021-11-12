@@ -1,0 +1,12 @@
+---
+version: "3.3"
+
+services:
+  revealjs:
+    image: cloudogu/reveal.js:4.1.0-r4
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./docs/slides:/reveal/docs/slides
+      - ./images:/reveal/images
+      - ./resources:/resources
