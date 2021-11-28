@@ -18,6 +18,7 @@ CONTAINER_ID=$(docker run --detach \
     $([[ -d resources ]] && echo "-v $(pwd)/resources:/resources") \
     $([[ -d plugin ]] && for dir in plugin/*/; do echo "-v $(pwd)/${dir}:/reveal/${dir}"; done) \
     -e TITLE="Spark core" \
+    -e THEME_CSS="cloudogu-black.css" \
     ${DOCKER_ARGS} \
    cloudogu/reveal.js:4.1.0-r4-dev)
 
